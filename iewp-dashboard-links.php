@@ -16,3 +16,8 @@
  	require_once( plugin_dir_path( __FILE__ ) . 'activation/db.php' );
  }
  register_activation_hook( __FILE__, 'iewp_dashboard_links_activate' );
+
+/**
+ * The dashboard widget
+ */
+require_once( plugin_dir_path( __FILE__ ) . 'dashboard/dashboard.php' );
