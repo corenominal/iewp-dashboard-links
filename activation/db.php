@@ -8,8 +8,8 @@ function iewp_dashboard_links_create_tables()
 
 	$sql = "CREATE TABLE IF NOT EXISTS `iewp_dashboard_links` (
 			  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-			  `name` varchar(255) NOT NULL DEFAULT '',
-			  `link` varchar(255) NOT NULL DEFAULT '',
+			  `label` varchar(255) NOT NULL DEFAULT '',
+			  `url` varchar(255) NOT NULL DEFAULT '',
 			  PRIMARY KEY (`id`)
 			) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 

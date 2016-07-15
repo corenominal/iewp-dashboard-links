@@ -38,6 +38,20 @@ add_action( 'admin_enqueue_scripts', 'iewp_dashboard_links_enqueue_scripts' );
 function iewp_dashboard_links_widget_function()
 {
     ?>
-    <!-- Content goes here -->
+	<div id="iewp-dashboard-links" class="iewp-dashboard-links">
+		<div class="addlink">
+			<button class="button">Add Link</button>
+		</div>
+		<div class="linkform">
+			<input type="text" id="iewp_link_label" autocomplete="off" placeholder="Link label">
+			<input type="text" id="iewp_link_url" autocomplete="off" placeholder="https://www...">
+			<button id="iewp_link_save" class="button button-primary">Save Link</button>
+			<button id="iewp_link_cancel" class="button">Cancel</button>
+			<div id="iewp-linkform-notify" class="iewp-linkform-notify"></div>
+		</div>
+		<div class="links">
+
+		</div>
+	</div>
     <?php
 }

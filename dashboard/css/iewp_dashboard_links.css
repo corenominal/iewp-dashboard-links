@@ -1,0 +1,26 @@
+.iewp-dashboard-links {
+    position: relative;
+}
+
+.iewp-dashboard-links .addlink {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.iewp-dashboard-links .linkform{
+    display: none;
+}
+
+.iewp-dashboard-links .linkform input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.iewp-dashboard-links .linkform button {
+    margin-bottom: 10px;
+}
+
+.iewp-dashboard-links .links {
+    min-height: 30px;
+}
