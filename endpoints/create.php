@@ -10,24 +10,28 @@ function iewp_dashboard_links_endpoint_create( $request_data )
 	$data['error'] = false;
 
 	if( !isset( $data['apikey'] ) )
-	{
 		$data['error'] = 'Please provide an API key';
-		return $data;
-	}
 
 	if( $data['apikey'] != $apikey )
-	{
 		$data['error'] = 'Invalid API key';
-		return $data;
-	}
 
-	if( trim( $data['label'] ) == '' )
-	{
+	if( !isset( $data['label'] ) || trim( $data['label'] ) == '' )
 		$data['error'] = 'Please enter a label for the link';
-		return $data;
-	}
 
-	global $wpdb;
+	if( !isset( $data['url'] ) || trim( $data['url'] ) == '' )
+		$data['error'] = 'Please enter an URL';
+
+	if ( filter_var( $data['url'], FILTER_VALIDATE_URL, FILTER_FLAG_SCHEME_REQUIRED ) === false )
+	    $data['error'] = 'Please enter a valid URL';
+
+	$url = parse_url( $data['url'] );
+	$png = file_get_contents( 'http://www.google.com/s2/favicons?domain=' . $url['host'] );
+	$data['favicon'] = 'data:image/png;base64,' . base64_encode( $png );
+
+	if( !$data['error'] ):
+		global $wpdb;
+
+	endif;
 
 
     return $data;

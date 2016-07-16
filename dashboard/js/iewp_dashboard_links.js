@@ -26,7 +26,7 @@ jQuery(document).ready(function($)
         var endpoint = $( this ).data( 'endpoint' );
         var data = {
             label: $( '#iewp_link_label' ).val(),
-            link: $( '#iewp_link_url' ).val(),
+            url: $( '#iewp_link_url' ).val(),
             apikey: $( '#iewp-dashboard-links' ).data( 'apikey' )
         };
         console.log( data );
