@@ -38,20 +38,16 @@ jQuery(document).ready(function($)
             data: data
         })
         .done(function( data ) {
-            console.log( data );
+            if( data.error )
+            {
+                var message = '<div id="message" class="error notice"><p>Error: ' + data.error + '</p></div>';
+                $( '#iewp-linkform-notify' ).html( message );
+            }
         })
         .fail(function() {
             console.log("error");
         });
 
-
-        var error = false;
-        var error = 'foobar';
-        if( error )
-        {
-            var message = '<div id="message" class="error notice"><p>' + error + '</p></div>';
-            $( '#iewp-linkform-notify' ).html( message );
-        }
     });
 
 });

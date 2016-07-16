@@ -21,6 +21,12 @@ function iewp_dashboard_links_endpoint_create( $request_data )
 		return $data;
 	}
 
+	if( trim( $data['label'] ) == '' )
+	{
+		$data['error'] = 'Please enter a label for the link';
+		return $data;
+	}
+
 	global $wpdb;
 
 
