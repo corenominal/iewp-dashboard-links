@@ -38,7 +38,7 @@ add_action( 'admin_enqueue_scripts', 'iewp_dashboard_links_enqueue_scripts' );
 function iewp_dashboard_links_widget_function()
 {
     ?>
-	<div id="iewp-dashboard-links" class="iewp-dashboard-links">
+	<div id="iewp-dashboard-links" class="iewp-dashboard-links" data-nonce="<?php echo wp_create_nonce('iewp-dashboard-links') ?>">
 		<div class="addlink">
 			<button class="button">Add Link</button>
 		</div>

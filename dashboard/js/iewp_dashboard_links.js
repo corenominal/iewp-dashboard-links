@@ -23,10 +23,13 @@ jQuery(document).ready(function($)
     {
         e.preventDefault();
         $( '#iewp-linkform-notify' ).html( '' );
-        var data = { label: $( '#iewp_link_label' ).val(), link: $( '#iewp_link_url' ).val()};
+        var data = {
+            label: $( '#iewp_link_label' ).val(),
+            link: $( '#iewp_link_url' ).val(),
+            nonce: $( '#iewp-dashboard-links' ).data( 'nonce' )
+        };
         console.log( data );
 
-        // Test result
         var error = false;
         var error = 'foobar';
         if( error )
