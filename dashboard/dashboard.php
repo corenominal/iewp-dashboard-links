@@ -38,14 +38,14 @@ add_action( 'admin_enqueue_scripts', 'iewp_dashboard_links_enqueue_scripts' );
 function iewp_dashboard_links_widget_function()
 {
     ?>
-	<div id="iewp-dashboard-links" class="iewp-dashboard-links" data-nonce="<?php echo wp_create_nonce('iewp-dashboard-links') ?>">
+	<div id="iewp-dashboard-links" class="iewp-dashboard-links" data-apikey="<?php echo get_option( 'iewp_dashboard_links_apikey', '' ); ?>">
 		<div class="addlink">
 			<button class="button">Add Link</button>
 		</div>
 		<div class="linkform">
 			<input type="text" id="iewp_link_label" autocomplete="off" placeholder="Link label">
 			<input type="text" id="iewp_link_url" autocomplete="off" placeholder="https://www...">
-			<button id="iewp_link_save" class="button button-primary">Save Link</button>
+			<button id="iewp_link_save" class="button button-primary" data-endpoint="<?php echo site_url('wp-json/iewp_dashboard_links/create') ?>">Save Link</button>
 			<button id="iewp_link_cancel" class="button">Cancel</button>
 			<div id="iewp-linkform-notify" class="iewp-linkform-notify"></div>
 		</div>

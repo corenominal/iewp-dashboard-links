@@ -23,12 +23,27 @@ jQuery(document).ready(function($)
     {
         e.preventDefault();
         $( '#iewp-linkform-notify' ).html( '' );
+        var endpoint = $( this ).data( 'endpoint' );
         var data = {
             label: $( '#iewp_link_label' ).val(),
             link: $( '#iewp_link_url' ).val(),
-            nonce: $( '#iewp-dashboard-links' ).data( 'nonce' )
+            apikey: $( '#iewp-dashboard-links' ).data( 'apikey' )
         };
         console.log( data );
+
+        $.ajax({
+            url: endpoint,
+            type: 'POST',
+            dataType: 'json',
+            data: data
+        })
+        .done(function( data ) {
+            console.log( data );
+        })
+        .fail(function() {
+            console.log("error");
+        });
+
 
         var error = false;
         var error = 'foobar';
