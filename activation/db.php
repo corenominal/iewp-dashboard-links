@@ -12,8 +12,18 @@ function iewp_dashboard_links_create_tables()
 			  `url` varchar(255) NOT NULL DEFAULT '',
 			  PRIMARY KEY (`id`)
 			) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
-
 	$query = $wpdb->query( $sql );
+
+	$sql = "SELECT * FROM `iewp_dashboard_links`
+			WHERE `url` = 'https://corenominal.org';";
+	$result = $wpdb->get_results( $sql, ARRAY_A );
+
+	if( $wpdb->num_rows == 0 )
+	{
+		$data['label'] = 'corenominal';
+		$data['url'] = 'https://corenominal.org';
+		$wpdb->insert( 'iewp_dashboard_links', $data, array( '%s', '%s' ) );
+	}
 
 }
 
