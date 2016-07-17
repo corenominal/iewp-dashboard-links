@@ -10,6 +10,7 @@ function iewp_dashboard_links_create_tables()
 			  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
 			  `label` varchar(255) NOT NULL DEFAULT '',
 			  `url` varchar(255) NOT NULL DEFAULT '',
+			  `favicon` text NOT NULL DEFAULT '',
 			  PRIMARY KEY (`id`)
 			) ENGINE=InnoDB DEFAULT CHARSET=latin1;";
 	$query = $wpdb->query( $sql );
@@ -22,7 +23,9 @@ function iewp_dashboard_links_create_tables()
 	{
 		$data['label'] = 'corenominal';
 		$data['url'] = 'https://corenominal.org';
-		$wpdb->insert( 'iewp_dashboard_links', $data, array( '%s', '%s' ) );
+		$png = file_get_contents( 'http://www.google.com/s2/favicons?domain=https://corenominal.org' );
+		$data['favicon'] = 'data:image/png;base64,' . base64_encode( $png );
+		$wpdb->insert( 'iewp_dashboard_links', $data, array( '%s', '%s', '%s' ) );
 	}
 
 }
