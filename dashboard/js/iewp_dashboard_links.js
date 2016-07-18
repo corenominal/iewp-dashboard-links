@@ -1,6 +1,28 @@
 jQuery(document).ready(function($)
 {
 
+    function get_links()
+    {
+        var endpoint = $( '#iewp-dashboard-links' ).data( 'endpoint' );
+        var data = {
+            apikey: $( '#iewp-dashboard-links' ).data( 'apikey' )
+        };
+        $.ajax({
+            url: endpoint,
+            type: 'GET',
+            dataType: 'json',
+            data: data
+        })
+        .done(function( data ) {
+            console.log( data );
+        })
+        .fail(function( data ) {
+            console.log( "error" );
+        });
+
+    }
+    get_links();
+
     $( document ).on( 'click', '.iewp-dashboard-links .addlink button', function(e) {
         e.preventDefault();
         $( this ).hide();
@@ -29,7 +51,6 @@ jQuery(document).ready(function($)
             url: $( '#iewp_link_url' ).val(),
             apikey: $( '#iewp-dashboard-links' ).data( 'apikey' )
         };
-        console.log( data );
 
         $.ajax({
             url: endpoint,
