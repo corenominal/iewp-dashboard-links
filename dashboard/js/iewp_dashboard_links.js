@@ -14,7 +14,24 @@ jQuery(document).ready(function($)
             data: data
         })
         .done(function( data ) {
-            console.log( data );
+            if( data.num_rows === 0 )
+            {
+                var links = '<span class="nodata"><span class="dashicons dashicons-warning"></span> No links found :-(</span>';
+            }
+            else
+            {
+                var links = '<ul>';
+                $.each(data.links, function(i, link)
+        		{
+                    links += '<li>';
+                    links += '<img class="favicon" src="' + link.favicon + '"> ';
+                    links += '<a href="" rel="noreferrer" target="_blank">' + link.label + '</a>';
+                    links += '<span class="iewp-link-rm">remove</span>';
+                    links += '</li>';
+        		});
+                links += '</ul>';
+            }
+            $( '#iewp-links' ).html( links );
         })
         .fail(function( data ) {
             console.log( "error" );
@@ -63,6 +80,14 @@ jQuery(document).ready(function($)
             {
                 var message = '<div id="message" class="error notice"><p>Error: ' + data.error + '</p></div>';
                 $( '#iewp-linkform-notify' ).html( message );
+            }
+            else
+            {
+                get_links();
+                $( '.iewp-dashboard-links .linkform' ).slideUp(400, function(e)
+                {
+                    $( '.iewp-dashboard-links .addlink button' ).show();
+                });
             }
         })
         .fail(function() {

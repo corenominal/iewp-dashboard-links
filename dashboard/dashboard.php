@@ -49,7 +49,7 @@ function iewp_dashboard_links_widget_function()
 			<button id="iewp_link_cancel" class="button">Cancel</button>
 			<div id="iewp-linkform-notify" class="iewp-linkform-notify"></div>
 		</div>
-		<div class="links">
+		<div id="iewp-links" class="iewp-links">
 
 		</div>
 	</div>

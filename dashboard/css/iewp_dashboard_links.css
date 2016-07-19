@@ -4,12 +4,15 @@
 
 .iewp-dashboard-links .addlink {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -46px;
+    right: 26px;
 }
 
-.iewp-dashboard-links .linkform{
+.iewp-dashboard-links .linkform {
     display: none;
+    background: #f5f5f5;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
 }
 
 .iewp-dashboard-links .linkform input {
@@ -21,6 +24,41 @@
     margin-bottom: 10px;
 }
 
-.iewp-dashboard-links .links {
+.iewp-dashboard-links .iewp-links {
     min-height: 30px;
+}
+
+.iewp-dashboard-links .iewp-links .nodata {
+    color: #72777c;
+}
+
+.iewp-dashboard-links .iewp-links li {
+    line-height: 16px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 6px;
+}
+
+.iewp-dashboard-links .iewp-links li:last-child {
+    border-bottom: none;
+}
+
+.iewp-dashboard-links .iewp-links .favicon {
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.iewp-link-rm {
+    position: absolute;
+    right: 0px;
+    color: #a00;
+    cursor: pointer;
+    display: none;
+}
+.iewp-dashboard-links .iewp-links li:hover > .iewp-link-rm {
+    display: inline-block;
+}
+
+.iewp-link-rm:hover {
+    color: red;
 }
