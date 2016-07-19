@@ -25,7 +25,7 @@ jQuery(document).ready(function($)
         		{
                     links += '<li>';
                     links += '<img class="favicon" src="' + link.favicon + '"> ';
-                    links += '<a href="" rel="noreferrer" target="_blank">' + link.label + '</a>';
+                    links += '<a href="' + link.url + '" rel="noreferrer" target="_blank">' + link.label + '</a>';
                     links += '<span class="iewp-link-rm">remove</span>';
                     links += '</li>';
         		});
