@@ -62,3 +62,13 @@
 .iewp-link-rm:hover {
     color: red;
 }
+
+.iewp-link-rm-confirm {
+    text-align: right;
+    padding: 4px 0;
+}
+
+.iewp-link-rm-confirm span {
+    display: inline-block;
+    padding: 6px 6px 0 0;
+}

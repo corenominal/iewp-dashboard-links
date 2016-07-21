@@ -26,7 +26,7 @@ jQuery(document).ready(function($)
                     links += '<li>';
                     links += '<img class="favicon" src="' + link.favicon + '"> ';
                     links += '<a href="' + link.url + '" rel="noreferrer" target="_blank">' + link.label + '</a>';
-                    links += '<span class="iewp-link-rm">remove</span>';
+                    links += '<span data-id="' + link.id + '" class="iewp-link-rm">remove</span>';
                     links += '</li>';
         		});
                 links += '</ul>';
@@ -94,6 +94,22 @@ jQuery(document).ready(function($)
             console.log("error");
         });
 
+    });
+
+    $( document ).on( 'click', '.iewp-link-rm', function( e )
+    {
+        e.preventDefault();
+        var parent = $( this ).closest( 'li' );
+        if( parent.find( 'button' ).length == 0 )
+        {
+            $( '.iewp-link-rm-confirm' ).remove();
+            var id = $( this ).data( 'id' );
+            var confirm = '<div id="iewp-link-rm-confirm' + id + '" class="iewp-link-rm-confirm"><span>Remove link?</span>';
+            confirm += '<button data-id="' + id + '" class="iewp-link-rm-yes button">Yes</button> ';
+            confirm += '<button class="iewp-link-rm-no button">No</button> ';
+            confirm += '</div>';
+            parent.append( confirm );
+        }
     });
 
 });
