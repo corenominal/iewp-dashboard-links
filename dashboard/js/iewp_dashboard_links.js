@@ -43,6 +43,7 @@ jQuery(document).ready(function($)
     $( document ).on( 'click', '.iewp-dashboard-links .addlink button', function(e) {
         e.preventDefault();
         $( this ).hide();
+        $( '.iewp-link-rm-confirm' ).remove();
         $( '#iewp_link_label' ).val( '' );
         $( '#iewp_link_url' ).val( '' );
         $( '#iewp-linkform-notify' ).html( '' );
