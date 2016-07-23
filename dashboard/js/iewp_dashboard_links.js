@@ -123,4 +123,27 @@ jQuery(document).ready(function($)
         $( '.iewp-link-rm-confirm' ).remove();
     });
 
+    $( document ).on( 'click', '.iewp-link-rm-yes', function(e)
+    {
+        e.preventDefault();
+        var endpoint = $( '#iewp-dashboard-links' ).data( 'endpoint-delete' );
+        var data = {
+            id: $( this ).data( 'id' ),
+            apikey: $( '#iewp-dashboard-links' ).data( 'apikey' )
+        };
+        $.ajax({
+            url: endpoint,
+            type: 'POST',
+            dataType: 'json',
+            data: data
+        })
+        .done(function() {
+            get_links();
+        })
+        .fail(function() {
+            console.log("error");
+        });
+
+    });
+
 });

@@ -38,7 +38,7 @@ add_action( 'admin_enqueue_scripts', 'iewp_dashboard_links_enqueue_scripts' );
 function iewp_dashboard_links_widget_function()
 {
     ?>
-	<div id="iewp-dashboard-links" class="iewp-dashboard-links" data-endpoint="<?php echo site_url('wp-json/iewp_dashboard_links/list') ?>" data-apikey="<?php echo get_option( 'iewp_dashboard_links_apikey', '' ); ?>">
+	<div id="iewp-dashboard-links" class="iewp-dashboard-links" data-endpoint="<?php echo site_url('wp-json/iewp_dashboard_links/list') ?>" data-endpoint-delete="<?php echo site_url('wp-json/iewp_dashboard_links/delete') ?>" data-apikey="<?php echo get_option( 'iewp_dashboard_links_apikey', '' ); ?>">
 		<div class="addlink">
 			<button class="button">Add Link</button>
 		</div>
