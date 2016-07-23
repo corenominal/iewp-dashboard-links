@@ -111,6 +111,16 @@ jQuery(document).ready(function($)
             confirm += '</div>';
             parent.append( confirm );
         }
+        else
+        {
+            $( '.iewp-link-rm-confirm' ).remove();
+        }
+    });
+
+    $( document ).on( 'click', '.iewp-link-rm-no', function(e)
+    {
+        e.preventDefault();
+        $( '.iewp-link-rm-confirm' ).remove();
     });
 
 });
