@@ -51,16 +51,15 @@
 .iewp-link-rm {
     position: absolute;
     right: 0px;
-    color: #a00;
+    color: #ccc;
     cursor: pointer;
-    display: none;
 }
 .iewp-dashboard-links .iewp-links li:hover > .iewp-link-rm {
     display: inline-block;
 }
 
 .iewp-link-rm:hover {
-    color: red;
+    color: #444;
 }
 
 .iewp-link-rm-confirm {

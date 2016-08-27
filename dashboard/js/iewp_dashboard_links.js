@@ -26,7 +26,7 @@ jQuery(document).ready(function($)
                     links += '<li>';
                     links += '<img class="favicon" src="' + link.favicon + '"> ';
                     links += '<a href="' + link.url + '" rel="noreferrer" target="_blank">' + link.label + '</a>';
-                    links += '<span data-id="' + link.id + '" class="iewp-link-rm">remove</span>';
+                    links += '<span data-id="' + link.id + '" class="iewp-link-rm"><span class="dashicons dashicons-admin-generic"></span></span>';
                     links += '</li>';
         		});
                 links += '</ul>';
